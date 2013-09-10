@@ -80,3 +80,9 @@ Carn<-read.table("carni.txt", header=T)
 head(Carn)
 str(Carn)
 #What's strange about this dataset? We'll talk about re-assigning variables next week.
+
+#you can quit with...
+q()
+#R will ask you if you want to save the workspace.
+#If you chose 'yes' then all your data assignments will be saved until next time.
+#When you relaunch R you will see [Workspace loaded from ~/Dropbox/Amherst/Courses/SOURCE/2013-Fall/.RData]
