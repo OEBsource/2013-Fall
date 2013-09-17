@@ -1,0 +1,715 @@
+mod2<-aov(NotchAB~NotchAC+Species, data=ANC)
+summary(mod2)
+anova(mod1, mod2)
+Ktum<-ANC[ANC$Species=="Morganucodon",]
+Mdon<-subset(ANC, Species=="Keuhneotherium")
+re1<-lm(NotchAB~NotchAC, data=Mdon)
+Mdon<-subset(ANC, Species=="Keuhneotherium")#
+Ktum<-ANC[ANC$Species=="Morganucodon",]#
+#
+re1<-lm(NotchAB~NotchAC, data=Mdon); summary(reg1)#
+#
+re2<-lm(NotchAB~NotchAC, data=Ktum); summary(reg2)#
+plot(NotchAB~NotchAC, data=ANC, type='n')#
+points(Mdon$NotchAB, Mdon$NotchAC, pch=20)#
+points(Ktum$NotchAB, Ktum$NotchAC, pch=1)#
+#
+abline(reg1, lty=1)#
+abline(reg2, lty=2)#
+legend("bottomright", c("Morganucodon","Keuhneotherium"), lty=c(1,2), pch=c(20))
+reg1<-lm(NotchAB~NotchAC, data=Mdon); summary(reg1)#
+#
+reg2<-lm(NotchAB~NotchAC, data=Ktum); summary(reg2)#
+plot(NotchAB~NotchAC, data=ANC, type='n')#
+points(Mdon$NotchAB, Mdon$NotchAC, pch=20)#
+points(Ktum$NotchAB, Ktum$NotchAC, pch=1)#
+#
+abline(reg1, lty=1)#
+abline(reg2, lty=2)#
+legend("bottomright", c("Morganucodon","Keuhneotherium"), lty=c(1,2), pch=c(20))
+require(vegan)
+citation(vegan)
+citation("vegan")
+require(abind); require(vegan)
+citation(abind); citation(vegan)
+citation(abind)
+citation("abind")
+citation("vegan")
+require(reshape)
+citation"reshape
+citation("reshape")
+citation("vegan")
+citation("abind")
+require(vegan)
+?vegdist
+citation()
+?quantile
+x<-c(0,1,2,3,4,5)
+y<-c(2,3,4,5,6)
+fit<-(x~y)
+plot(x~y)
+x<-c(1,2,3,4,5)
+x<-c(1,2,3,4,5)#
+y<-c(2,3,4,5,6)#
+#
+fit<-(x~y)#
+#
+plot(x~y)
+fit<-(x,y)
+plot(x,y)
+abline(fit)
+x<-c(1,2,3,4,5)#
+y<-c(2,3,4,5,6)#
+#
+fit<-(y~x)#
+#
+plot(x,y)#
+#
+abline(fit)
+x<-c(1,2,3,4,5)#
+y<-c(2,3,4,5,6)#
+#
+fit<-(y~x)
+plot(x,y)
+abline(fit)
+plot(y,x)
+abline(fit)
+x<-c(1,2,3,4,5)#
+y<-c(2,3,4,5,6)#
+#
+fit<-(y~x)#
+#
+plot(x,y)#
+#
+abline(fit)
+fit
+fit<-lm(y~x)#
+#
+plot(x,y)#
+#
+abline(fit)
+quantile(c(x,y), probs=c(0.025,0.0975))
+lines(quantile(c(x,y), probs=c(0.025,0.0975)))
+quantile(c(x,y), probs=c(0.025,0.975))
+?predict
+predict(fit)
+x<-c(1,2,3,4,5)#
+y<-c(3,6,8,9,10)#
+#
+fit<-lm(y~x)#
+#
+predict(fit)
+predict(fit, interval='confidence')
+poop<-predict(fit, interval='confidence')
+plot(x,y)
+lines(x,poop[,2])
+plot(x,y, xlim=c(0,10), ylim=c(0,10))#
+#
+lines(x,poop[,2])
+lines(x,poop[,3])
+lines(x, poop[,1])
+plot(x,y, xlim=c(0,10), ylim=c(0,10))#
+#
+lines(x,poop[,2], lty=2)#
+lines(x,poop[,3], lty=2)#
+lines(x, poop[,1])
+x#
+poop[,2]
+str(poop[,2])
+str[,x]
+str(x)
+x#
+poop[,2][1]
+poop[,2]
+as.vector(poop[,2])
+str(poop)
+class(poop)
+as.data.frame(poop)
+class(poop)
+poop1<-as.data.frame(poop)
+class(poop1)
+poop1
+poop1$newcol<-x
+poop1
+require(gclus)#
+require(vegan)
+Teeth<-read.csv("~/Desktop/Teeth1.csv", header=T)#
+Ktherium<-Teeth[Teeth$Species=="Keuhneotherium",]#
+Mucodon<-Teeth[Teeth$Species=="Morganucodon",]
+Ktherium
+my.abs <-abs(cor(Ktherium[,4:11]))#
+my.colors<-dmat.color(my.abs)#
+cpairs(Ktherium[,3:11], panel.colors=my.colors, gap=.5)
+cpairs(Ktherium[,4:11], panel.colors=my.colors, gap=.5)
+plot(Ktherium[,4], Ktherium[,9])
+Ktherium
+Teeth<-read.csv("~/Desktop/Teeth1.csv", header=T)#
+Ktherium<-Teeth[Teeth$Species=="Keuhneotherium",]#
+Mucodon<-Teeth[Teeth$Species=="Morganucodon",]
+my.abs <-abs(cor(Ktherium[,4:11]))#
+my.colors<-dmat.color(my.abs)#
+cpairs(Ktherium[,4:11], panel.colors=my.colors, gap=.5)
+plot(Ktherium[,4], Ktherium[,9])
+set.seed(101)
+x <- 0:100#
+y <- 2*x + rnorm(101, 0, 10)
+plot(x, y)
+mod1 <- lm(y ~ x)#
+yHat <- fitted(mod1)
+errors <- resid(mod1)
+boot <- function(n = 10000){#
+ b1 <- numeric(n)#
+ b1[1] <- coef(mod1)[2]#
+ for(i in 2:n){#
+ residBoot <- sample(errors, replace=F)#
+ yBoot <- yHat + residBoot#
+ modBoot <- lm(yBoot ~ x)#
+ b1[i] <- coef(modBoot)[2]#
+ }#
+ return(b1)#
+}
+system.time( bootB1 <- boot() )
+yHat
+errors
+?lm.fit
+boot <- function(n = 10000){#
+ b1 <- numeric(n)#
+ b1[1] <- coef(mod1)[2]#
+ for(i in 2:n){#
+ residBoot <- sample(errors, replace=F)#
+ yBoot <- yHat + residBoot#
+ modBoot <- lm.fit(yBoot ~ x)#
+ b1[i] <- coef(modBoot)[2]#
+ }#
+ return(b1)#
+}#
+# Run the bootstrapping function#
+system.time( bootB1 <- boot() )#
+mean(bootB1)
+boot <- function(n = 10000){#
+ b1 <- numeric(n)#
+ b1[1] <- coef(mod1)[2]#
+ for(i in 2:n){#
+ residBoot <- sample(errors, replace=F)#
+ yBoot <- yHat + residBoot#
+ modBoot <- lm(yBoot ~ x)#
+ b1[i] <- coef(modBoot)[2]#
+ }#
+ return(b1)#
+}#
+# Run the bootstrapping function#
+system.time( bootB1 <- boot() )#
+mean(bootB1)
+install.packages("surface")
+require(surface)
+data(surfaceDemo)
+tree<-surfaceDemo$tree
+dat<-surfaceDemo$sim$dat
+tree<-nameNodes(tree)
+olist<-convertTreeData(tree,dat)
+otree<-olist[[1]]; odata<-olist[[2]]
+fwd<-surfaceForward(otree, odata, aic_threshold = 0, exclude = 0, verbose = FALSE, plotaic = FALSE)
+k<-length(fwd)
+fsum<-surfaceSummary(fwd) ;names(fsum)
+bwd<-surfaceBackward(otree, odata, starting_model = fwd[[k]], aic_threshold = 0, only_best = FALSE, verbose = FALSE, plotaic = FALSE) ; bsum<-surfaceSummary(bwd) ; kk<-length(bwd)
+surfaceTreePlot(tree, bwd[[kk]], labelshifts = T)
+par(mfrow=c(1,2), mai=c(0.8,0.8,0.2,0.2)) ; surfaceTraitPlot(dat, bwd[[kk]], whattraits = c(1,2)) ; surfaceTraitPlot(dat, bwd[[kk]], whattraits = c(3,2))
+surfaceTreePlot(tree, bwd[[kk]], labelshifts = F)
+dat
+olist
+otree
+montecarloPi <- function(trials) {#
+  count = 0#
+  for(i in 1:trials) {#
+    if((runif(1,0,1)^2 + runif(1,0,1)^2)<1) {#
+      count = count + 1#
+    }#
+  }#
+  return((count*4)/trials)#
+}
+montecarloPi(10)
+montecarloPi(10000)
+montecarloPi(10000000)
+iDemandPi<-function(n=100){#
+#Two runs will give you your x and y coordinate position#
+randomX<-runif(n=n, min=-1, max=1)#
+randomY<-runif(n=n, min=-1, max=1)#
+#
+#To get ourt circle part, x^2+y^2=1, and also values less than one will be within the circle#
+insideCircle<-randomX^2+randomY^2<=1#
+#Want to get # points in circle/# points in square * 4 (area of square)#
+#Divide by n (all numbers) as all numbers will be somewhere within the square.#
+#R reads TRUE and FALSE statements as 1 and 0.#
+myPi=4*(sum(insideCircle)/n)#
+#
+#Now index by the logical statement.#
+plot(x=randomX[insideCircle], y=randomY[insideCircle], pch=19)#
+return(myPi)#
+}
+iDemandPi(10000)
+randomX<-runif(n=10, min=-1, max=1)#
+randomY<-runif(n=10, min=-1, max=1)
+randomX
+randomY
+insideCircle<-randomX^2+randomY^2<=1
+insideCircle
+myPi=4*(sum(insideCircle)/10)
+myPi
+sum(insideCircle)
+4*(sum(insideCircle)/10)
+sum(insideCircle)/10)
+sum(insideCircle)/10
+randomX<-runif(n=100, min=-1, max=1)#
+randomY<-runif(n=100, min=-1, max=1)#
+#
+#To get ourt circle part, x^2+y^2=1, and also values less than one will be within the circle#
+insideCircle<-randomX^2+randomY^2<=1#
+#Want to get # points in circle/# points in square * 4 (area of square)#
+#Divide by n (all numbers) as all numbers will be somewhere within the square.#
+#R reads TRUE and FALSE statements as 1 and 0.#
+myPi=4*(sum(insideCircle)/10)
+randomX<-runif(n=100, min=-1, max=1)#
+randomY<-runif(n=100, min=-1, max=1)#
+#
+#To get ourt circle part, x^2+y^2=1, and also values less than one will be within the circle#
+insideCircle<-randomX^2+randomY^2<=1#
+#Want to get # points in circle/# points in square * 4 (area of square)#
+#Divide by n (all numbers) as all numbers will be somewhere within the square.#
+#R reads TRUE and FALSE statements as 1 and 0.#
+myPi=4*(sum(insideCircle)/100)
+myPi
+sum(insideCircle)
+rnorm(1, 5, 2)
+brownian< -function(n=1000,plot=T,fun=rnorm) {#
+	x<-cumsum(fun(n))#
+	y<-cumsum(fun(n))#
+	plot(x,y,type="l")#
+	}#
+brownian(fun=rnorm)
+brownian< -function(n=1000,plot=T,fun=rnorm) {#
+	x<-cumsum(fun(n))#
+	y<-cumsum(fun(n))#
+	plot(x,y,type="l")#
+	}
+brownian<- function(n=1000,plot=T,fun=rnorm) {#
+	x<-cumsum(fun(n))#
+	y<-cumsum(fun(n))#
+	plot(x,y,type="l")#
+	}#
+brownian(fun=rnorm)
+brownian<- function(n=1000,plot=T,fun=rnorm,df=1) {#
+	x<-cumsum(fun(n,df))#
+	y<-cumsum(fun(n,df))#
+	plot(x,y,type="l")#
+	}#
+brownian(fun=rt)
+brownian<- function(n=1000,plot=T,fun=rnorm) {#
+	x<-cumsum(fun(n))#
+	y<-cumsum(fun(n))#
+	plot(x,y,type="l")#
+	}#
+brownian(fun=rnorm)
+brownian<- function(n=100,plot=T,fun=rnorm) {#
+	x<-cumsum(fun(n))#
+	y<-cumsum(fun(n))#
+	plot(x,y,type="l")#
+	}#
+brownian(fun=rnorm)
+brownian<- function(n=100,plot=T,fun=rnorm) {#
+	x<-cumsum(fun(n))#
+	y<-cumsum(fun(n))#
+	plot(x,y,type="p")#
+	}#
+brownian(fun=rnorm)
+brownian<- function(n=100,plot=T,fun=rnorm) {#
+	x<-cumsum(fun(n))#
+	y<-cumsum(fun(n))#
+	plot(x,y,type="b")#
+	}#
+brownian(fun=rnorm)
+maturity <- 15#
+simulation.length <- 10001#
+dt <-  maturity/(simulation.length-1)#
+#
+timeline <- seq(0,maturity, dt)#
+#
+S0<-1#
+r<-0.05#
+mu<-0.1#
+mu0<-0.2#
+sigma<-0.2#
+sigma0<-0.375#
+#
+f <- g <- g0 <- h <- h0 <- rep(0, times=simulation.length)#
+g0[1] <- h0[1] <- g[1] <-  h[1] <- S0#
+#
+for(i in 2:simulation.length){#
+ f[i] <- f[i-1]+sqrt(dt)*rnorm(1)#
+ g[i] <- g[1]*exp((mu-(sigma^2)/2)*(i-1)*dt+sigma*f[i])#
+ g0[i] <- g0[1]*exp(mu*(i-1)*dt)#
+ h[i] <- h[1]*exp((mu0-sigma0^2/2)*(i-1)*dt+sigma0*f[i])#
+ h0[i] <- h0[1]*exp(mu0*(i-1)*dt)#
+}#
+#
+o_range <- range(f,g,g0,h,h0)#
+#
+plot(timeline,f, ylim=o_range, type="l", col="coral1")#
+lines(timeline,g0, col="chartreuse3")#
+lines(timeline,g, col="chartreuse2")#
+lines(timeline,h, col="deepskyblue1")#
+lines(timeline,h0, col="deepskyblue3")#
+#
+title(main="Geometric Brownian Motion trajectories", col.main="red", font.main=4)#
+legend(1, o_range[2], c("mu = 0.2,  sigma = 0.375","mu = 0.1,  sigma = 0.2","Brownian motion"), cex=0.8, #
+   col=c("deepskyblue1","chartreuse2","coral1"), pch=1, lty=1);
+maturity <- 15#
+simulation.length <- 10001#
+dt <-  maturity/(simulation.length-1)#
+#
+timeline <- seq(0,maturity, dt)#
+#
+S0<-1#
+r<-0.05#
+mu<-0.1#
+mu0<-0.2#
+sigma<-0.8#
+sigma0<-0.375#
+#
+f <- g <- g0 <- h <- h0 <- rep(0, times=simulation.length)#
+g0[1] <- h0[1] <- g[1] <-  h[1] <- S0#
+#
+for(i in 2:simulation.length){#
+ f[i] <- f[i-1]+sqrt(dt)*rnorm(1)#
+ g[i] <- g[1]*exp((mu-(sigma^2)/2)*(i-1)*dt+sigma*f[i])#
+ g0[i] <- g0[1]*exp(mu*(i-1)*dt)#
+ h[i] <- h[1]*exp((mu0-sigma0^2/2)*(i-1)*dt+sigma0*f[i])#
+ h0[i] <- h0[1]*exp(mu0*(i-1)*dt)#
+}#
+#
+o_range <- range(f,g,g0,h,h0)#
+#
+plot(timeline,f, ylim=o_range, type="l", col="coral1")#
+lines(timeline,g0, col="chartreuse3")#
+lines(timeline,g, col="chartreuse2")#
+lines(timeline,h, col="deepskyblue1")#
+lines(timeline,h0, col="deepskyblue3")#
+#
+title(main="Geometric Brownian Motion trajectories", col.main="red", font.main=4)#
+legend(1, o_range[2], c("mu = 0.2,  sigma = 0.375","mu = 0.1,  sigma = 0.2","Brownian motion"), cex=0.8, #
+   col=c("deepskyblue1","chartreuse2","coral1"), pch=1, lty=1);
+maturity <- 15#
+simulation.length <- 10001#
+dt <-  maturity/(simulation.length-1)#
+#
+timeline <- seq(0,maturity, dt)#
+#
+S0<-1#
+r<-0.05#
+mu<-0.1#
+mu0<-0.2#
+sigma<-0.8#
+sigma0<-0.8#
+#
+f <- g <- g0 <- h <- h0 <- rep(0, times=simulation.length)#
+g0[1] <- h0[1] <- g[1] <-  h[1] <- S0#
+#
+for(i in 2:simulation.length){#
+ f[i] <- f[i-1]+sqrt(dt)*rnorm(1)#
+ g[i] <- g[1]*exp((mu-(sigma^2)/2)*(i-1)*dt+sigma*f[i])#
+ g0[i] <- g0[1]*exp(mu*(i-1)*dt)#
+ h[i] <- h[1]*exp((mu0-sigma0^2/2)*(i-1)*dt+sigma0*f[i])#
+ h0[i] <- h0[1]*exp(mu0*(i-1)*dt)#
+}#
+#
+o_range <- range(f,g,g0,h,h0)#
+#
+plot(timeline,f, ylim=o_range, type="l", col="coral1")#
+lines(timeline,g0, col="chartreuse3")#
+lines(timeline,g, col="chartreuse2")#
+lines(timeline,h, col="deepskyblue1")#
+lines(timeline,h0, col="deepskyblue3")#
+#
+title(main="Geometric Brownian Motion trajectories", col.main="red", font.main=4)#
+legend(1, o_range[2], c("mu = 0.2,  sigma = 0.375","mu = 0.1,  sigma = 0.2","Brownian motion"), cex=0.8, #
+   col=c("deepskyblue1","chartreuse2","coral1"), pch=1, lty=1);
+maturity <- 15#
+simulation.length <- 10001#
+dt <-  maturity/(simulation.length-1)#
+#
+timeline <- seq(0,maturity, dt)#
+#
+S0<-1#
+r<-0.05#
+mu<-0.1#
+mu0<-0.2#
+sigma<-0.1#
+sigma0<-0.1#
+#
+f <- g <- g0 <- h <- h0 <- rep(0, times=simulation.length)#
+g0[1] <- h0[1] <- g[1] <-  h[1] <- S0#
+#
+for(i in 2:simulation.length){#
+ f[i] <- f[i-1]+sqrt(dt)*rnorm(1)#
+ g[i] <- g[1]*exp((mu-(sigma^2)/2)*(i-1)*dt+sigma*f[i])#
+ g0[i] <- g0[1]*exp(mu*(i-1)*dt)#
+ h[i] <- h[1]*exp((mu0-sigma0^2/2)*(i-1)*dt+sigma0*f[i])#
+ h0[i] <- h0[1]*exp(mu0*(i-1)*dt)#
+}#
+#
+o_range <- range(f,g,g0,h,h0)#
+#
+plot(timeline,f, ylim=o_range, type="l", col="coral1")#
+lines(timeline,g0, col="chartreuse3")#
+lines(timeline,g, col="chartreuse2")#
+lines(timeline,h, col="deepskyblue1")#
+lines(timeline,h0, col="deepskyblue3")#
+#
+title(main="Geometric Brownian Motion trajectories", col.main="red", font.main=4)#
+legend(1, o_range[2], c("mu = 0.2,  sigma = 0.375","mu = 0.1,  sigma = 0.2","Brownian motion"), cex=0.8, #
+   col=c("deepskyblue1","chartreuse2","coral1"), pch=1, lty=1);
+setwd("/Users/Home/Desktop")
+setwd("/Users/Home/Desktop")#
+#
+Wings<-read.csv("TestSheet.csv", header=T)
+str(Wings)
+length(Wings)
+dim(Wings)[1]
+rowVec<-seq(from=1, to=nrow(Wings), by=3)
+rowVec
+?mean
+?apply
+?lapply
+mean(Wings[1:3],[7:28])
+mean(Wings[1:3],Wings[7:28])
+mean(Wings[1:3],Wings[7])
+mean(Wings[1:3,],Wings[,7])
+Wings[1:3,]
+Wings[,7]
+Wings[1:3,7]
+nrow(Wings)/3
+n<-dim(Wings)[1]
+n
+n<-dim(Wings)[1]#
+i<-1#
+Output<-matrix(data=NA, ncol=ncol(Wings), nrow=nrow(Wings)/3)#
+#
+while(i < n){#
+#
+for(j in 7:28){#
+Output[i,j]<-mean(Wings[i:i+2,j])#
+}#
+#
+i<-i+3#
+}
+n<-dim(Wings)[1]#
+i<-1#
+Output<-matrix(data=NA, ncol=ncol(Wings), nrow=nrow(Wings)/3)
+Output
+for(j in 7:28){#
+Output[j]<-mean(Wings[1:3,j])#
+}
+Output
+Output<-matrix(data=NA, ncol=ncol(Wings), nrow=nrow(Wings)/3)
+for(j in 7:28){#
+Output[,j]<-mean(Wings[1:3,j])#
+}
+Output
+Output<-matrix(data=NA, ncol=ncol(Wings), nrow=nrow(Wings)/3)
+for(j in 7:28){#
+Output[1,j]<-mean(Wings[1:3,j])#
+}
+Output
+n<-dim(Wings)[1]#
+i<-1#
+Output<-matrix(data=NA, ncol=ncol(Wings), nrow=nrow(Wings)/3)#
+#
+while(i < n){#
+#
+for(j in 7:28){#
+Output[i,j]<-mean(Wings[i:(i+2),j])#
+}#
+#
+i<-i+3#
+}
+n<-dim(Wings)[1]
+dim(Wings)[1]
+n<-dim(Wings)[1]#
+i<-1#
+#Output<-matrix(data=NA, ncol=ncol(Wings), nrow=nrow(Wings)/3)#
+Output<-matrix(data=NA, ncol=29, nrow=17)#
+while(i < n){#
+#
+for(j in 7:28){#
+Output[i,j]<-mean(Wings[i:(i+2),j])#
+}#
+#
+i<-i+3#
+}
+n<-dim(Wings)[1]#
+i<-1#
+#Output<-matrix(data=NA, ncol=ncol(Wings), nrow=nrow(Wings)/3)#
+Output<-matrix(data=NA, ncol=40, nrow=25)#
+while(i < n){#
+#
+for(j in 7:28){#
+Output[i,j]<-mean(Wings[i:(i+2),j])#
+}#
+#
+i<-i+3#
+}
+n<-dim(Wings)[1]#
+i<-1#
+#Output<-matrix(data=NA, ncol=ncol(Wings), nrow=nrow(Wings)/3)#
+Output<-matrix(data=NA, ncol=28, nrow=48)#
+while(i < n){#
+#
+for(j in 7:28){#
+Output[i,j]<-mean(Wings[i:(i+2),j])#
+}#
+#
+i<-i+3#
+}
+Output
+rowVec<-seq(from=1, to=nrow(Output), by=3)#
+MeanOutput<-Output[rowVec,7:28]
+MeanOutput
+rowVecName<-seq(from=1, to=nrow(Wings), by=3)
+SpecName<-Wings[rowVecName,2]
+SpecName
+row.names(MeanOutput)<-SpecName
+MeanOutput
+nrow(Wings)
+levels(Wings$phylo_name)
+length(levels(Wings$phylo_name))
+ls()
+rm(list=ls())
+ls()
+Force<-read.table("Force_Displacement.txt", header=T)
+setwd("/Users/Home/Dropbox/Amherst/Courses/SOURCE/2013-Fall")
+Force<-read.table("Force_Displacement.txt", header=T)
+Force<-read.table("Force_Displacement.txt", header=T)
+setwd("/Users/Home/Dropbox/Amherst/Courses/SOURCE/2013-Fall/Week2_DataHandling")
+Force<-read.table("Force_Displacement.txt", header=T)
+Force<-read.table("Force_Displacement.txt", header=T, sep="/t")
+Force<-read.table("Force_Displacement.txt", header=T, sep="")
+Force<-read.table("Force_Displacement.txt", header=T, sep="\t")
+Force
+table(Force)
+mean(Force)
+str(Force)
+Force[,3]
+Force$Force.nm
+Force$Force.mn
+Force[,2:3]
+ForceEdit<-Force[,-1]
+ForceEdit
+ForceEdit2<-Force[,-2:-3]
+ForceEdit2
+Force[1,]
+Force[1:5,]
+ForceRowEdit<-Force[-6:-10,]
+ForceRowEdit
+Force[4:8,2:3]
+Forces<-log(Force$Dispalcement.um)
+Forces<-log(Force$Displacement.um)
+Forces
+Force$LOGdisplacement.um<-log(Force$Displacement.um)
+Force
+names(Force)[2]
+Force.Test
+rm(list=ls())#
+#
+#Set your working directory.#
+setwd("/Users/Home/Dropbox/Amherst/Courses/SOURCE/2013-Fall/Week2_DataHandling")#
+#
+#Read in your data file.#
+Force<-read.table("Force_Displacement.txt", header=T)#
+#Remember how we had those problems because we had a space in our title?#
+#
+#We'll we can get R to sort them out (once we know what the problem is).#
+#We need to tell R how each of our data entries is separated using 'sep'.#
+#
+Force<-read.table("Force_Displacement.txt", header=T, sep="\t")#
+#Note the direction of the slash - this file is tab delimited.#
+#R will put a "." where the space was in our headers#
+Force#
+#
+#Check the structure#
+str(Force)#
+#Good - everything looks correct.#
+####Accessing certain parts of your data frame#####
+#With this dataset we're only interested in the force measurement.#
+#We can extract that using a techniwue called indexing.#
+#the syntax for indexing is DATANAME[rownumbers,columnnumbers]#
+#
+#Let's see what's in the third column#
+Force[,3]#
+#
+#If you know the name of the variable you're interested in you can access it using the '$' sign.#
+Force$Force.mn#
+#
+#If you want to look at two variables it's easier to use indexing.#
+Force[,2:3]#
+#The colon here means 'show me data entries from column 2 to column 3.#
+#
+#You can also delete columns. Place into a different data name so you don't overwrite anything.#
+ForceEdit1<-Force[,-1]#
+ForceEdit1#
+#
+#Or#
+ForceEdit2<-Force[,-2:-3]#
+ForceEdit2#
+#
+#Let's access some rows.#
+Force[1,]#
+#Multiple rows#
+Force[1:5,]#
+#Delete the last 5#
+ForceRowEdit<-Force[-6:-10,]#
+ForceRowEdit#
+#
+#See a subset of the rows and column#
+Force[4:8,2:3]#
+####Data transformation#####
+#I'd like to log some of my data.#
+log(Force$Displacement.um)#
+#This will log every data point in your varaible.#
+#
+#Let's duplicate our original data frame so we don't modify he original#
+Force.Test<-Force#
+#
+#Let's add that onto the end of our data frame.#
+Force.Test$LOGdisplacement.um<-log(Force.Test$Displacement.um)#
+#Here we wanted our new varaible to be called 'LOGdisplacement.um' and we wanted the log of displacement to go into it.#
+#
+#You can also overwrite your original data.#
+Force.Test$Displacement.um <-log(Force.Test$Displacement.um)#
+#You are now placing it back into the 'Displacement.um' variable column.#
+#there's an extra step though... You need to rename the variable so you know the data has been logged.#
+names(Force.Test)[2]<-"LOGdisplacement.um"#
+#Here we see indexing being used again - the 2 here means the second column name in our data frame.#
+#
+#Let's see it all#
+Force.Test
+Force.Test[,-4]
+Force.Final
+Force.Final<-Force.Test[,-4]
+Force.Final
+write.table(x=Force.Final, file="Force.LOGtransform.txt")
+write.table(x=Force.Final, file="Force.LOGtransform.txt", row.names=FALSE)
+Lizards<-read,csv("anolisData.csv", header=T, na.strings="?")
+Lizards<-read.csv("anolisData.csv", header=T, na.strings="?")
+Lizards
+LizardsEdit<-Lizards
+Drops<-"Awesomeness"#
+#
+LizardDrops<-LizardsEdit[,!(names(LizardsEdit) %in% drops)]
+Drops<-"Awesomeness"#
+#
+LizardDrops<-LizardsEdit[,!(names(LizardsEdit) %in% Drops)]
+LizardDrops
+LizardDrop<-LizardEdit[,-7]
+LizardDrop<-LizardsEdit[,-7]
+LizardDrop
+LizardsEdit$LogSVL<-log(LizardsEdit$SVL)
+LizardsEdit
