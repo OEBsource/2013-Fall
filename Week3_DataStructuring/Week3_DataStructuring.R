@@ -1,6 +1,6 @@
 ####SOURCE####
 #Week 3 - Data Structuring#
-#By Yi-nan Hu
+#By Yinan Hu
 rm(list=ls())
 setwd("D:/R/SOURCE/working data")
 
