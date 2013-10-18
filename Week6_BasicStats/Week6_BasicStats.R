@@ -63,7 +63,7 @@ head(Anole)
 Anole.sub<-subset(Anole,subset=Island=="Cuba"|Island=="Hispaniola")
 #The '==' is a logical statement.
 #It means 'I want all the rows where this condition is true'.
-#In our example it means ' I want all the species from the islands of Cuba and Hispaniola'.
+#In our example it means 'I want all the species from the islands of Cuba and Hispaniola'.
 
 #Let's run our t-test using the formula notation.
 t.test(sqrt.SVL~Island,data=Anole.sub, paired=F, alternative="two.sided")
