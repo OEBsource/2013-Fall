@@ -37,7 +37,6 @@ summary(WingPCA) # print variance accounted for
 
 loadings(WingPCA) # pc loadings 
 #First PC normally has a size component (unless from a landmark analysis)
-plot(WingPCA,type="lines") # scree plot 
 
 WingPCA$scores #View the principal components
 plot(WingPCA$scores)
@@ -72,4 +71,24 @@ text(WScores[,1], WScores[,2], row.names(WScores), cex=0.6, pos=4, col="red")
 
 
 
-#PCO
+#Tasks
+#Read in BatData.csv - calcuate a PCA and plot the scores onto a morphospace.
+#Check the data - should it be a correlation or covaraition matrix?
+
+
+
+
+Bats<-read.csv("BatData.csv", header=T, row.names=1)
+head(Bats)
+
+ncol(Bats)
+BatPCA <- princomp(Bats[ ,1:4], cor=F)
+
+summary(BatPCA) # print variance accounted for 
+
+loadings(BatPCA) # pc loadings 
+#First PC normally has a size component (unless from a landmark analysis)
+
+BatPCA$scores #View the principal components
+plot(BatPCA$scores)
+
