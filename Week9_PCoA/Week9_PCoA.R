@@ -44,8 +44,24 @@ ozone.dists <- dist(ozone$Av8top, method="euclidean")
 #statistic under each permutation and comparing the original test statistic to the
 #distribution of test statistics from the permutations to generate a p-value
 
-mantel(station.dists, ozone.dists)
+require(ade4)
+mantel.randtest(station.dists, ozone.dists)
 
 #Test is significant, yay!
 #So smaller differences in ozone are generally seen among pairs of stations that are
 #close to each other than far from each other.
+
+
+anolis<-read.csv("MPCO1.csv", header=T)
+head(anolis)
+
+library(MASS)
+
+fit <- lda(Group ~ V1 + V2, data=anolis, na.action="na.omit", CV=TRUE)
+
+fit
+
+ct <- table(anolis$Group, fit$class)
+diag(prop.table(ct, 1))
+# total percent correct
+sum(diag(prop.table(ct)))
